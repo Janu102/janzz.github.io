@@ -2,10 +2,12 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Janzz Store</title>
 
 <style>
 *{box-sizing:border-box;font-family:Segoe UI,sans-serif}
+
 body{
  margin:0;
  min-height:100vh;
@@ -14,44 +16,68 @@ body{
  url("https://files.catbox.moe/c3gf4g.jpg");
  background-size:cover;
  background-position:center;
- display:flex;
- justify-content:center;
- align-items:center;
  color:white;
+ padding:20px 12px;
 }
+
 .box{
- width:390px;
+ width:100%;
+ max-width:480px;
+ margin:40px auto;
  background:rgba(15,23,42,.95);
- padding:20px;
+ padding:25px;
  border-radius:16px;
  box-shadow:0 0 25px #00ffff55;
 }
-h2{text-align:center;color:#00ffff}
-.subtitle{text-align:center;font-size:13px;color:#94a3b8;margin-bottom:12px}
+
+h2{
+ text-align:center;
+ color:#00ffff;
+ font-size:22px;
+}
+
+.subtitle{
+ text-align:center;
+ font-size:14px;
+ color:#94a3b8;
+ margin-bottom:14px
+}
+
 input,select{
  width:100%;
- padding:11px;
- margin:6px 0;
+ padding:13px;
+ margin:8px 0;
  border-radius:10px;
  border:none;
+ font-size:14px;
 }
+
 button{
  width:100%;
- padding:12px;
+ padding:14px;
  border:none;
  border-radius:12px;
  background:#00ffff;
  font-weight:bold;
- margin-top:10px;
+ margin-top:12px;
  cursor:pointer;
+ font-size:15px;
 }
+
 .menu-btn{
  background:#020617;
  color:white;
  border:1px solid #00ffff;
 }
+
 .hidden{display:none}
-.price{text-align:center;font-size:14px;color:#94a3b8;margin-top:5px}
+
+.price{
+ text-align:center;
+ font-size:15px;
+ color:#94a3b8;
+ margin-top:8px
+}
 </style>
 </head>
 
@@ -143,8 +169,6 @@ button{
 <option data-price="Rp 7.400">50 Diamond</option>
 <option data-price="Rp 14.700">100 Diamond</option>
 <option data-price="Rp 30.000">200 Diamond</option>
-<
-
 </select>
 
 <div id="ffharga" class="price"></div>
@@ -207,7 +231,6 @@ function backGame(){
  gameBox.classList.remove("hidden");
 }
 
-/* ML */
 function mlNext(){
  if(!mlid.value||!mlserver.value) return alert("Lengkapi ID & Server");
  mlStep1.classList.add("hidden");
@@ -227,7 +250,6 @@ Metode Pembayaran : ${m}`;
  location.href=`https://wa.me/${wa}?text=`+encodeURIComponent(t);
 }
 
-/* FF */
 function ffNext(){
  if(!ffid.value) return alert("ID wajib diisi");
  ffStep1.classList.add("hidden");
@@ -247,7 +269,6 @@ Metode Pembayaran : ${m}`;
  location.href=`https://wa.me/${wa}?text=`+encodeURIComponent(t);
 }
 
-/* SUPER SUS */
 function showSusPrice(){
  susharga.innerText="Harga : "+susproduk.options[susproduk.selectedIndex].dataset.price;
 }
